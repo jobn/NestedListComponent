@@ -1,2 +1,0 @@
-# NestedListComponent
-Created with CodeSandbox
