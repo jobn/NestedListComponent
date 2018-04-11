@@ -8,7 +8,7 @@ import { data } from "./data";
 const NestedList = ({ data, keyName, level = 0, render }) => (
   <Fragment>
     {data[keyName].map(item => (
-      <Fragment>
+      <Fragment key={item.id}>
         {render(item, level)}
         {item[keyName] && (
           <NestedList
