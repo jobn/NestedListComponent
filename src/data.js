@@ -2,8 +2,7 @@ export const data = {
   categories: [
     {
       id: 1,
-      name: "first",
-      categories: []
+      name: "first"
     },
     {
       id: 2,
@@ -11,8 +10,7 @@ export const data = {
       categories: [
         {
           id: 21,
-          name: "inner-first",
-          categories: []
+          name: "inner-first"
         },
         {
           id: 22,
@@ -20,13 +18,11 @@ export const data = {
           categories: [
             {
               id: 221,
-              name: "inner-inner-first",
-              categories: []
+              name: "inner-inner-first"
             },
             {
               id: 222,
-              name: "inner-iiner-second",
-              categories: []
+              name: "inner-iiner-second"
             }
           ]
         }
@@ -34,8 +30,7 @@ export const data = {
     },
     {
       id: 3,
-      name: "third",
-      categories: []
+      name: "third"
     }
   ]
 };

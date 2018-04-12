@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { render } from "react-dom";
 import { data } from "./data";
 
@@ -9,9 +9,9 @@ const NestedList = ({ data, keyName, level = 0, render }) => {
   if (!data[keyName]) return null;
 
   return (
-    <Fragment>
+    <ul>
       {data[keyName].map(item => (
-        <Fragment key={item.id}>
+        <li key={item.id}>
           {render(item, level)}
           {item[keyName] && (
             <NestedList
@@ -21,17 +21,22 @@ const NestedList = ({ data, keyName, level = 0, render }) => {
               render={render}
             />
           )}
-        </Fragment>
+        </li>
       ))}
-    </Fragment>
+    </ul>
   );
 };
 
 // The rendering component gets a "level" prop that can be
 // used for any type of conditional rendering or styling
-const Category = ({ name, level }) => (
-  <h4 style={{ marginLeft: `${level}rem` }}>{name}</h4>
-);
+const Category = ({ name, level }) => {
+  const Element =
+    {
+      0: "h4",
+      1: "p"
+    }[level] || "span";
+  return <Element>{name}</Element>;
+};
 
 const App = () => (
   <NestedList
